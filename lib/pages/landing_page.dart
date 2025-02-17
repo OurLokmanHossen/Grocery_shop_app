@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_shop/pages/home.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -47,27 +48,32 @@ class _LandingPageState extends State<LandingPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Container(
-                  padding:
-                      EdgeInsets.only(left: 20, right: 15, top: 12, bottom: 12),
-                  decoration: BoxDecoration(
-                    color: Color(0xFFFFCC3F),
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(10),
-                        bottomLeft: Radius.circular(10)),
-                  ),
-                  child: Row(
-                    children: [
-                      Text("Next",
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 22.0,
-                              fontWeight: FontWeight.w700)),
-                      SizedBox(
-                        width: 15,
-                      ),
-                      Icon(Icons.arrow_forward_ios),
-                    ],
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> Home()));
+                  },
+                  child: Container(
+                    padding: EdgeInsets.only(
+                        left: 20, right: 15, top: 12, bottom: 12),
+                    decoration: BoxDecoration(
+                      color: Color(0xFFFFCC3F),
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          bottomLeft: Radius.circular(10)),
+                    ),
+                    child: Row(
+                      children: [
+                        Text("Next",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 22.0,
+                                fontWeight: FontWeight.w700)),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        Icon(Icons.arrow_forward_ios),
+                      ],
+                    ),
                   ),
                 ),
               ],

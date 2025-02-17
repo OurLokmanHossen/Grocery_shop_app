@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_shop/pages/detailspage.dart';
-import 'package:grocery_shop/pages/home.dart';
+
 import 'package:grocery_shop/pages/landing_page.dart';
 import 'package:device_preview/device_preview.dart';
 
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Detailspage(),
+      home: LandingPage(),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_shop/pages/detailspage.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -106,52 +107,60 @@ class _HomeState extends State<Home> {
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
-                    Container(
-                      padding: EdgeInsets.only(
-                        top: 10.0,
-                        left: 20.0,
-                      ),
-                      decoration: BoxDecoration(
-                        color: const Color(0xffffe08e),
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Orange',
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            '\$2.99 each',
-                            style: TextStyle(
-                                color: Colors.black38,
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          Image.asset(
-                            'images/orange.png',
-                            height: 150,
-                            width: 150,
-                            fit: BoxFit.cover,
-                          ),
-                          Container(
-                            padding: EdgeInsets.all(15),
-                            margin: EdgeInsets.only(left: 120),
-                            decoration: BoxDecoration(
-                                color: Color(0xFFFFEAB5),
-                                borderRadius: BorderRadius.only(
-                                  bottomRight: Radius.circular(30),
-                                  topLeft: Radius.circular(20),
-                                )),
-                            child: Icon(
-                              Icons.add,
-                              color: Colors.orange,
-                              size: 30.0,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Detailspage()));
+                      },
+                      child: Container(
+                        padding: EdgeInsets.only(
+                          top: 10.0,
+                          left: 20.0,
+                        ),
+                        decoration: BoxDecoration(
+                          color: const Color(0xffffe08e),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Orange',
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
                             ),
-                          )
-                        ],
+                            Text(
+                              '\$2.99 each',
+                              style: TextStyle(
+                                  color: Colors.black38,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            Image.asset(
+                              'images/orange.png',
+                              height: 150,
+                              width: 150,
+                              fit: BoxFit.cover,
+                            ),
+                            Container(
+                              padding: EdgeInsets.all(15),
+                              margin: EdgeInsets.only(left: 120),
+                              decoration: BoxDecoration(
+                                  color: Color(0xFFFFEAB5),
+                                  borderRadius: BorderRadius.only(
+                                    bottomRight: Radius.circular(30),
+                                    topLeft: Radius.circular(20),
+                                  ),),
+                              child: Icon(
+                                Icons.add,
+                                color: Colors.orange,
+                                size: 30.0,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     SizedBox(
@@ -201,7 +210,8 @@ class _HomeState extends State<Home> {
                               color: Colors.pink,
                               size: 30.0,
                             ),
-                          )
+                          ),
+                          
                         ],
                       ),
                     ),
